@@ -36,7 +36,8 @@
             [self performSegueWithIdentifier:@"login" sender:self];
         }else{
             NSLog(@"Token not equal password");
-            //todo alert about error in password
+            //TODO reload loginField and passwordField
+            //TODO alert about error in password
         }
     }else{
         NSLog(@"Token equal nil");
@@ -46,14 +47,6 @@
     
 }
 
-//[self performSegueWithIdentifier:@"takeId" sender:indexPath];
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"login"]) {
-        NSLog(@"segue login");
-    }else{
-        NSLog(@"segue not found identifier");
-    }
-}
 
 
 @end

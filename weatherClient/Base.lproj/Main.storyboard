@@ -30,7 +30,6 @@
                                 </state>
                                 <connections>
                                     <action selector="submitReg:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZRa-9q-sw7"/>
-                                    <segue destination="ogc-uX-Whb" kind="presentation" identifier="login" id="e31-uD-DB2"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password:" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LWD-2F-m9T">
@@ -87,6 +86,7 @@
                     </view>
                     <connections>
                         <outlet property="registrationView" destination="8bC-Xf-vdC" id="8Wn-zM-zwi"/>
+                        <segue destination="ogc-uX-Whb" kind="show" identifier="login" id="vJE-XY-dtt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
