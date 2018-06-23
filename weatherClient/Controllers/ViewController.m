@@ -37,6 +37,17 @@
         }else{
             NSLog(@"Token not equal password");
             //TODO reload loginField and passwordField
+            //reload: bad version {
+            UIAlertController* alert= [UIAlertController alertControllerWithTitle:@"Error!"
+                                                                          message:@"Password is not correct." preferredStyle:UIAlertControllerStyleAlert];
+            
+            
+            UIAlertAction* actionOK = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault
+                                                             handler:^(UIAlertAction * _Nonnull action){}];
+            [alert addAction:actionOK];
+            [self presentViewController:alert animated:YES completion:nil];
+            self.registrationView.loginField.text = @"";
+            self.registrationView.passwordField.text = @"";
             //TODO alert about error in password
         }
     }else{
