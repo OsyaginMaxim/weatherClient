@@ -112,8 +112,8 @@
         <!--Item 1-->
         <scene sceneID="LYg-Gi-N6a">
             <objects>
-                <viewController id="J2E-DC-zZ2" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7qS-80-n8t">
+                <viewController id="J2E-DC-zZ2" customClass="WeatherViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7qS-80-n8t" customClass="WeatherView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
