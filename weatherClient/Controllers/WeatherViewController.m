@@ -17,7 +17,7 @@
     CLGeocoder *geocoder;
     CLPlacemark *placemark;
 }
-@synthesize country;
+@synthesize cityName;
 
 - (void)viewDidLoad {
     NSLog(@"WeatherViewController");
@@ -29,15 +29,12 @@
 }
 
 -(void)getWeatherToday{
-    // проверяем доступность службы геолокации
     if([CLLocationManager locationServicesEnabled]){
         if(!location)
             location = [[CLLocationManager alloc] init];
         location.delegate = self;
-        // задаем наилучшую точность и дистанцию фильтра в 100 метров
         location.desiredAccuracy = kCLLocationAccuracyBest;
         location.distanceFilter = 100;
-        // данный селектор поддерживается только начиная с iOS 8, и его вызов необходим для запуска
         if ([location respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
             [location requestWhenInUseAuthorization];
         }
@@ -64,8 +61,8 @@
         //NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
         if (error == nil && [placemarks count] > 0) {
             self->placemark = [placemarks lastObject];
-            self.country = self->placemark.locality;
-            NSLog(@"%@ %@\n%@ %@\n%@\n%@", self->placemark.subThoroughfare, self->placemark.thoroughfare, self->placemark.postalCode, self->placemark.locality, self->placemark.administrativeArea, self->placemark.country);
+            self.cityName = self->placemark.locality;
+            NSLog(@"%@", self.cityName);
         } else {
             NSLog(@"%@", error.debugDescription);
         }

@@ -11,6 +11,6 @@
 
 @interface WeatherViewController : UIViewController <CLLocationManagerDelegate>
 
-@property(nonatomic, strong) NSString * country;
+@property(nonatomic, strong) NSString * cityName;
 
 @end
