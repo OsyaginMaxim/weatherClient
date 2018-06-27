@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		80C71D105436DF41D5D31F98 /* libPods-weatherClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC4E4C0A2DD50B08029F393 /* libPods-weatherClient.a */; };
+		94E6E39520E14B2800C5CBAE /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E6E39420E14B2800C5CBAE /* Location.m */; };
+		94E6E39720E1CE4A00C5CBAE /* 15bbc93346737fdc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 94E6E39620E1CE4A00C5CBAE /* 15bbc93346737fdc.jpg */; };
 		A454D55A64E6FD9B7A7486B7 /* libPods-weatherClientUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB687D86631C60BC794B47E /* libPods-weatherClientUITests.a */; };
 		B573DE1120D9509F0083DEC7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B573DE1020D9509F0083DEC7 /* AppDelegate.m */; };
 		B573DE1420D9509F0083DEC7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B573DE1320D9509F0083DEC7 /* ViewController.m */; };
@@ -50,6 +52,9 @@
 		20042BA194007700FFB125E4 /* Pods-weatherClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherClientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weatherClientTests/Pods-weatherClientTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2EB687D86631C60BC794B47E /* libPods-weatherClientUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-weatherClientUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		655324CC0801B8BCF0C90F84 /* Pods-weatherClientUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherClientUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weatherClientUITests/Pods-weatherClientUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		94E6E39320E14B2800C5CBAE /* Location.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Location.h; path = weatherClient/Location.h; sourceTree = SOURCE_ROOT; };
+		94E6E39420E14B2800C5CBAE /* Location.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = weatherClient/Location.m; sourceTree = SOURCE_ROOT; };
+		94E6E39620E1CE4A00C5CBAE /* 15bbc93346737fdc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 15bbc93346737fdc.jpg; path = ../../../../Downloads/15bbc93346737fdc.jpg; sourceTree = "<group>"; };
 		9CC4E4C0A2DD50B08029F393 /* libPods-weatherClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-weatherClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DDCCE3B6EB5C87B181E6078 /* libPods-weatherClientTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-weatherClientTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6B6ACA6835109897FAA01D3 /* Pods-weatherClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weatherClient/Pods-weatherClient.debug.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +158,7 @@
 		B573DE0E20D9509F0083DEC7 /* weatherClient */ = {
 			isa = PBXGroup;
 			children = (
+				94E6E39620E1CE4A00C5CBAE /* 15bbc93346737fdc.jpg */,
 				B573DE4D20D9631A0083DEC7 /* Managers */,
 				B573DE4620D95B650083DEC7 /* Models */,
 				B573DE4520D95B590083DEC7 /* Controllers */,
@@ -224,6 +230,8 @@
 		B573DE4D20D9631A0083DEC7 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				94E6E39320E14B2800C5CBAE /* Location.h */,
+				94E6E39420E14B2800C5CBAE /* Location.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -346,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5A86BE420DEA6B000F9EC45 /* WeatherViewController.xib in Resources */,
+				94E6E39720E1CE4A00C5CBAE /* 15bbc93346737fdc.jpg in Resources */,
 				B573DE1F20D950A10083DEC7 /* LaunchScreen.storyboard in Resources */,
 				B573DE1C20D950A10083DEC7 /* Assets.xcassets in Resources */,
 				B573DE1720D9509F0083DEC7 /* Main.storyboard in Resources */,
@@ -436,6 +445,7 @@
 				B573DE5220DA5BE50083DEC7 /* Weather.m in Sources */,
 				B573DE1420D9509F0083DEC7 /* ViewController.m in Sources */,
 				B573DE4920D95D430083DEC7 /* Registration.m in Sources */,
+				94E6E39520E14B2800C5CBAE /* Location.m in Sources */,
 				B573DE1A20D9509F0083DEC7 /* weatherClient.xcdatamodeld in Sources */,
 				B573DE2220D950A10083DEC7 /* main.m in Sources */,
 				B573DE1120D9509F0083DEC7 /* AppDelegate.m in Sources */,

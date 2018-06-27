@@ -16,7 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.registrationView.passwordField.secureTextEntry = YES;
     [self.registrationView cornerRadiusButton];
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 

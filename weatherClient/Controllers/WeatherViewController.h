@@ -7,10 +7,22 @@
 //
 
 #import <CoreLocation/CoreLocation.h>
+#import <AFNetworking.h>
 #import <UIKit/UIKit.h>
+#import "Weather.h"
+#import "WeatherView.h"
 
 @interface WeatherViewController : UIViewController <CLLocationManagerDelegate>
 
-@property(nonatomic, strong) NSString * cityName;
+@property (nonatomic, strong) NSString *cityName;
+@property (weak, nonatomic) IBOutlet UILabel *city;
+@property (weak, nonatomic) IBOutlet UILabel *temp;
+@property (weak, nonatomic) IBOutlet UILabel *maxTemp;
+@property (weak, nonatomic) IBOutlet UILabel *minTemp;
+@property (weak, nonatomic) IBOutlet UILabel *weatherDisc;
+@property (weak, nonatomic) IBOutlet UILabel *pressure;
+@property (weak, nonatomic) IBOutlet UILabel *humidity;
+@property (weak, nonatomic) IBOutlet UILabel *wind;
+@property (weak, nonatomic) IBOutlet UILabel *clouds;
 
 @end
