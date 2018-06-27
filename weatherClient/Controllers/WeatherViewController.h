@@ -6,13 +6,13 @@
 //  Copyright © 2018 Maksim. All rights reserved.
 //
 
-#import <CoreLocation/CoreLocation.h>
 #import <AFNetworking.h>
 #import <UIKit/UIKit.h>
 #import "Weather.h"
 #import "WeatherView.h"
+#import "Location.h"
 
-@interface WeatherViewController : UIViewController <CLLocationManagerDelegate>
+@interface WeatherViewController : UIViewController
 
 @property (nonatomic, strong) NSString *cityName;
 @property (weak, nonatomic) IBOutlet UILabel *city;

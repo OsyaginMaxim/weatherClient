@@ -6,8 +6,14 @@
 //  Copyright © 2018 Maksim. All rights reserved.
 //
 
+#import <CoreLocation/CoreLocation.h>
 #import <Foundation/Foundation.h>
 
-@interface Location : NSObject
+@interface Location : NSObject <CLLocationManagerDelegate>
+
+@property(nonatomic, retain) NSString* cityLocation;
+
+-(NSString*)getWeatherToday;
++(id) sharedManager;
 
 @end

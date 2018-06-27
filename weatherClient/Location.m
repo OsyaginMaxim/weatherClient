@@ -8,6 +8,64 @@
 
 #import "Location.h"
 
-@implementation Location
+@implementation Location{
+    CLLocationManager *location;
+    CLGeocoder *geocoder;
+    CLPlacemark *placemark;
+}
+
++ (id)sharedManager {
+    static Location *sharedLocation = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedLocation = [[self alloc] init];
+    });
+    return sharedLocation;
+}
+
+- (id)init {
+    if (self = [super init]) {
+        location = [[CLLocationManager alloc] init];
+        geocoder = [[CLGeocoder alloc] init];
+        //someProperty = [[NSString alloc] initWithString:@"Default Property Value"];
+    }
+    return self;
+}
+
+-(NSString*)getWeatherToday{
+    if([CLLocationManager locationServicesEnabled]){
+        if(!location)
+            location = [[CLLocationManager alloc] init];
+        location.delegate = self;
+        location.desiredAccuracy = kCLLocationAccuracyBest;
+        location.distanceFilter = 100;
+        if ([location respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+            [location requestWhenInUseAuthorization];
+        }
+        [location startUpdatingLocation];
+    }
+    return self.cityLocation;
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"didFailWithError: %@", error);
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    CLLocation* currentLocation = [locations lastObject];
+    [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+        if (error == nil && [placemarks count] > 0) {
+            placemark = [placemarks lastObject];
+            self.cityLocation = placemark.locality;
+            NSLog(@"%@", self.cityLocation);
+            
+            
+        } else {
+            NSLog(@"%@", error.debugDescription);
+        }
+    } ];
+    
+}
 
 @end
