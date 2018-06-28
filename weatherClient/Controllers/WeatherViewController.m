@@ -25,8 +25,20 @@
     NSLog(@"WeatherViewController");
     [super viewDidLoad];
     location = [Location sharedManager];
-    self.cityName = [location getWeatherToday];
-    [self loadData]; //^ {
+    //dispatch_queue_t aQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    //dispatch_sync(aQueue,^{
+    //    self.cityName = [location getWeatherToday];
+    //    NSLog(@"cityName: %@",self.cityName);
+    //    [self loadData]; //^ {
+    //});
+    //NSString* (^getLoction)(Location*) = ^(Location* locat){
+    //    return [locat getWeatherToday];
+    //};
+    [location getWeatherToday];
+    self.cityName = [location getCityName];
+    [self loadData];
+    //self.cityName = [location getWeatherToday];
+    
     // Do any additional setup after loading the view from its nib.
 }
 

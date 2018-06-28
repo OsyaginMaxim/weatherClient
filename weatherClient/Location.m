@@ -32,7 +32,7 @@
     return self;
 }
 
--(NSString*)getWeatherToday{
+-(void)getWeatherToday{
     if([CLLocationManager locationServicesEnabled]){
         if(!location)
             location = [[CLLocationManager alloc] init];
@@ -44,12 +44,15 @@
         }
         [location startUpdatingLocation];
     }
-    return self.cityLocation;
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     NSLog(@"didFailWithError: %@", error);
+}
+
+-(NSString*)getCityName{
+    return self.cityLocation;
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {

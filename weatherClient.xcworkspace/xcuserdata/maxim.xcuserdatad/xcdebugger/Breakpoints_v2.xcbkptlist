@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weatherClient/Controllers/WeatherViewController.m"
-            timestampString = "551805407.689009"
+            timestampString = "551876304.483747"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "-fahrenheit:"
             landmarkType = "7">
          </BreakpointContent>
