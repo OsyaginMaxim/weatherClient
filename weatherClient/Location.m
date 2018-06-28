@@ -35,7 +35,7 @@
 -(void)getWeatherToday{
     if([CLLocationManager locationServicesEnabled]){
         if(!location)
-            location = [[CLLocationManager alloc] init];
+            //location = [[CLLocationManager alloc] init];
         location.delegate = self;
         location.desiredAccuracy = kCLLocationAccuracyBest;
         location.distanceFilter = 100;
@@ -43,6 +43,11 @@
             [location requestWhenInUseAuthorization];
         }
         [location startUpdatingLocation];
+
+        self.lat = [NSString stringWithFormat:@"%f", self->location.location.coordinate.latitude];
+        self.lon = [NSString stringWithFormat:@"%f", self->location.location.coordinate.longitude];
+
+        //Вытаскиваем сразу значения наших координат и присваиваем менеджеру
     }
 }
 

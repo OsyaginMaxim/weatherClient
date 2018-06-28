@@ -25,6 +25,11 @@
     NSLog(@"WeatherViewController");
     [super viewDidLoad];
     location = [Location sharedManager];
+
+    //Забираем данные и по ним будем делать запрос
+
+    location.lon
+    location.lat
     //dispatch_queue_t aQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     //dispatch_sync(aQueue,^{
     //    self.cityName = [location getWeatherToday];
@@ -44,7 +49,7 @@
 
 -(void)loadData{
     //dispatch main que
-    
+
     NSString *encoded = [self.cityName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     AFHTTPSessionManager *manager   = [AFHTTPSessionManager manager];
     [manager    GET:[NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather?q=%@&appid=e59ece3932558bbf120fde279c990ff7", encoded]

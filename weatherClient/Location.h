@@ -16,4 +16,7 @@
 -(void)getWeatherToday;
 +(id) sharedManager;
 
+@property(nonatomic, strong) NSString *lat;
+@property(nonatomic, strong) NSString *lon;
+
 @end

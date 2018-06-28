@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Location.m"
 
 @interface AppDelegate ()
 
@@ -16,6 +17,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [Location.sharedManager getWeatherToday];
+
+    //При запуске загружаем локацию телефона
+
     // Override point for customization after application launch.
     return YES;
 }
