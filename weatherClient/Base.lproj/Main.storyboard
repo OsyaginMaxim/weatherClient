@@ -246,7 +246,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="2Nj-xB-ip4">
             <objects>
-                <tabBarController id="ogc-uX-Whb" customClass="TabBarController" sceneMemberID="viewController">
+                <tabBarController restorationIdentifier="TabBarController" storyboardIdentifier="TabBarController" id="ogc-uX-Whb" customClass="TabBarController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="SiT-Aa-Cak"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mRX-MR-fr6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>

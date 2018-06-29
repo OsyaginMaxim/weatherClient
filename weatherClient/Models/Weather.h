@@ -10,4 +10,18 @@
 
 @interface Weather : NSObject
 
+@property(nonatomic, strong)NSString* weatherName;
+@property(nonatomic, strong)NSString* weatherWind;
+@property(nonatomic, strong)NSString* weatherClouds;
+@property(nonatomic, strong)NSString* weatherTemp;
+@property(nonatomic, strong)NSString* weatherMinTemp;
+@property(nonatomic, strong)NSString* weatherMaxTemp;
+@property(nonatomic, strong)NSString* weatherPressure;
+@property(nonatomic, strong)NSString* weatherHumidity;
+@property(nonatomic, strong)NSString* weatherRain;
+@property(nonatomic, strong)NSString* weatherID;
+@property(nonatomic, strong)NSString* weatherIcon;
+@property(nonatomic, strong)NSString* weatherMain;
+
+
 @end

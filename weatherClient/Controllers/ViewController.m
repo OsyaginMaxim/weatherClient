@@ -22,7 +22,6 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -35,6 +34,7 @@
         NSLog(@"Token not equal nil");
         if(self.registrationView.passwordField.text == token){
             NSLog(@"Token equal password");
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLogged"];
             [self performSegueWithIdentifier:@"login" sender:self];
         }else{
             NSLog(@"Token not equal password");
@@ -55,6 +55,7 @@
     }else{
         NSLog(@"Token equal nil");
         [keychain setString:self.registrationView.passwordField.text forKey:self.registrationView.loginField.text];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLogged"];
         [self performSegueWithIdentifier:@"login" sender:self];
     }
     

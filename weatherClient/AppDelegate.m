@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "Location.m"
+#import "Location.h"
 
 @interface AppDelegate ()
 
@@ -18,6 +18,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [Location.sharedManager getWeatherToday];
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isLogged"]) {
+        
+        UITabBarController *controller = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
+        self.window.rootViewController = controller;
+    }
 
     //При запуске загружаем локацию телефона
 

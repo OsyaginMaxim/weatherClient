@@ -1,71 +1,46 @@
-//
-//  WeatherViewController.m
-//  weatherClient
-//
-//  Created by Maksim on 23.06.2018.
-//  Copyright © 2018 Maksim. All rights reserved.
-//
-
 #import "WeatherViewController.h"
+
 
 @interface WeatherViewController ()
 
 @end
 
 @implementation WeatherViewController{
-    NSString *name;
     NSObject *weather;
     NSObject *windSpeed;
     NSObject *cloud;
     NSObject *main;
     Location* location;
+    NSString* currentLon;
+    NSString* currentLat;
 }
 
 - (void)viewDidLoad {
     NSLog(@"WeatherViewController");
     [super viewDidLoad];
     location = [Location sharedManager];
-
-    //Забираем данные и по ним будем делать запрос
-
-    location.lon
-    location.lat
-    //dispatch_queue_t aQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    //dispatch_sync(aQueue,^{
-    //    self.cityName = [location getWeatherToday];
-    //    NSLog(@"cityName: %@",self.cityName);
-    //    [self loadData]; //^ {
-    //});
-    //NSString* (^getLoction)(Location*) = ^(Location* locat){
-    //    return [locat getWeatherToday];
-    //};
     [location getWeatherToday];
-    self.cityName = [location getCityName];
     [self loadData];
-    //self.cityName = [location getWeatherToday];
-    
     // Do any additional setup after loading the view from its nib.
 }
 
 -(void)loadData{
-    //dispatch main que
-
-    NSString *encoded = [self.cityName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     AFHTTPSessionManager *manager   = [AFHTTPSessionManager manager];
-    [manager    GET:[NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather?q=%@&appid=e59ece3932558bbf120fde279c990ff7", encoded]
+    [manager    GET:[NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather?lat=%@&lon=%@&appid=e59ece3932558bbf120fde279c990ff7",location.lat,location.lon]
          parameters:nil
            progress:nil
             success:^(NSURLSessionTask *task, id responseObject) {
                 
                 //TODO распарсить json с key:weather в массив NSMutableArray, затем уже из array[0] вытащить описание по key:discription
                 
-                name = [responseObject valueForKey:@"name"];
                 main = [responseObject valueForKey:@"main"];
                 cloud = [responseObject valueForKey:@"clouds"];
                 windSpeed = [responseObject valueForKey:@"wind"];
-                weather = [responseObject valueForKey:@"weather"];
-                NSLog(@"Response: %@, %@, %@, %@, %@", name, main, cloud, windSpeed, weather);
-                self.city.text = self.cityName;
+                for (NSDictionary *fileDictionary in [responseObject objectForKey:@"weather"]) {
+                    self.weatherDisc.text = [fileDictionary valueForKey:@"main"];
+                }
+                NSLog(@"Response:%@, %@, %@, %@, %@ ,lat:%@, lon:%@",[responseObject valueForKey:@"name"], main, cloud, windSpeed, self.weatherDisc.text, location.lat, location.lon);
+                self.city.text = [responseObject valueForKey:@"name"];
                 self.temp.text = [self celsius:[NSString stringWithFormat:@"%@ C", [main valueForKey:@"temp"]]];
                 self.maxTemp.text = [NSString stringWithFormat:@"Max: %@", [self celsius:[NSString stringWithFormat:@"%@", [main valueForKey:@"temp_max"]]]];
                 self.minTemp.text = [NSString stringWithFormat:@"Min: %@", [self celsius:[NSString stringWithFormat:@"%@", [main valueForKey:@"temp_min"]]]];
@@ -73,7 +48,7 @@
                 self.humidity.text = [NSString stringWithFormat:@"Humidity: %@%%", [main valueForKey:@"humidity"]];
                 self.clouds.text = [NSString stringWithFormat:@"Clouds: %@%%", [cloud valueForKey:@"all"]];
                 self.wind.text =[NSString stringWithFormat:@"Wind: %@ m/s", [windSpeed valueForKey:@"speed"]];
-                NSLog(@"%@",weather);
+                NSLog(@"%@", [weather valueForKey:@"main"]);
             }
             failure:^(NSURLSessionTask *operation, NSError *error) {
                 NSLog(@"Error: %@", error);
@@ -99,13 +74,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

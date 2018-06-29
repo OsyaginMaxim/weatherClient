@@ -36,18 +36,15 @@
     if([CLLocationManager locationServicesEnabled]){
         if(!location)
             //location = [[CLLocationManager alloc] init];
-        location.delegate = self;
+            location.delegate = self;
         location.desiredAccuracy = kCLLocationAccuracyBest;
         location.distanceFilter = 100;
         if ([location respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
             [location requestWhenInUseAuthorization];
         }
         [location startUpdatingLocation];
-
         self.lat = [NSString stringWithFormat:@"%f", self->location.location.coordinate.latitude];
         self.lon = [NSString stringWithFormat:@"%f", self->location.location.coordinate.longitude];
-
-        //Вытаскиваем сразу значения наших координат и присваиваем менеджеру
     }
 }
 
@@ -77,3 +74,4 @@
 }
 
 @end
+
