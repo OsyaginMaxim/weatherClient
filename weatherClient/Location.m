@@ -27,7 +27,6 @@
     if (self = [super init]) {
         location = [[CLLocationManager alloc] init];
         geocoder = [[CLGeocoder alloc] init];
-        //someProperty = [[NSString alloc] initWithString:@"Default Property Value"];
     }
     return self;
 }
@@ -35,13 +34,8 @@
 -(void)getWeatherToday{
     if([CLLocationManager locationServicesEnabled]){
         if(!location)
-            //location = [[CLLocationManager alloc] init];
             location.delegate = self;
         location.desiredAccuracy = kCLLocationAccuracyBest;
-        location.distanceFilter = 100;
-        if ([location respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
-            [location requestWhenInUseAuthorization];
-        }
         [location startUpdatingLocation];
         self.lat = [NSString stringWithFormat:@"%f", self->location.location.coordinate.latitude];
         self.lon = [NSString stringWithFormat:@"%f", self->location.location.coordinate.longitude];
@@ -64,8 +58,6 @@
             placemark = [placemarks lastObject];
             self.cityLocation = placemark.locality;
             NSLog(@"%@", self.cityLocation);
-            
-            
         } else {
             NSLog(@"%@", error.debugDescription);
         }

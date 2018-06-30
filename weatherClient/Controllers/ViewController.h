@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "Registration.h"
 #import <UICKeyChainStore/UICKeyChainStore.h>
-//#import <QuartzCore/QuartzCore.h>
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UISwitch *autoSwitch;
+@property (weak, nonatomic) IBOutlet UILabel *autoLable;
 @property (strong, nonatomic) IBOutlet Registration *registrationView;
 - (IBAction)submitReg:(id)sender;
 

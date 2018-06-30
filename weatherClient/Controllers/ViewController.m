@@ -16,15 +16,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLogged"];
     self.registrationView.passwordField.secureTextEntry = YES;
     [self.registrationView cornerRadiusButton];
-    
     // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)switchAction:(id)sender {
+    
+    if ([self.autoSwitch isOn]) {
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isLogged"];
+        NSLog(@"Switch is off");
+    } else {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLogged"];
+        NSLog(@"Switch is on");
+    }
+    
 }
 
 - (IBAction)submitReg:(id)sender {
@@ -34,18 +45,13 @@
         NSLog(@"Token not equal nil");
         if(self.registrationView.passwordField.text == token){
             NSLog(@"Token equal password");
-            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLogged"];
             [self performSegueWithIdentifier:@"login" sender:self];
         }else{
             NSLog(@"Token not equal password");
-            //TODO reload loginField and passwordField
-            //reload: bad version {
-            UIAlertController* alert= [UIAlertController alertControllerWithTitle:@"Error!"
-                                                                          message:@"Password is not correct." preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController* alert= [UIAlertController alertControllerWithTitle:@"Error!" message:@"Password is not correct." preferredStyle:UIAlertControllerStyleAlert];
             
+            UIAlertAction* actionOK = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){}];
             
-            UIAlertAction* actionOK = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault
-                                                             handler:^(UIAlertAction * _Nonnull action){}];
             [alert addAction:actionOK];
             [self presentViewController:alert animated:YES completion:nil];
             self.registrationView.loginField.text = @"";
@@ -55,7 +61,6 @@
     }else{
         NSLog(@"Token equal nil");
         [keychain setString:self.registrationView.passwordField.text forKey:self.registrationView.loginField.text];
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLogged"];
         [self performSegueWithIdentifier:@"login" sender:self];
     }
     

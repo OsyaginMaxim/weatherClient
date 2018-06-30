@@ -21,6 +21,7 @@
     location = [Location sharedManager];
     [location getWeatherToday];
     [self loadData];
+    NSLog(@"lon:%@ lat:%@",location.lon,location.lat);
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -30,9 +31,6 @@
          parameters:nil
            progress:nil
             success:^(NSURLSessionTask *task, id responseObject) {
-                
-                //TODO распарсить json с key:weather в массив NSMutableArray, затем уже из array[0] вытащить описание по key:discription
-                
                 main = [responseObject valueForKey:@"main"];
                 cloud = [responseObject valueForKey:@"clouds"];
                 windSpeed = [responseObject valueForKey:@"wind"];
@@ -41,19 +39,25 @@
                 }
                 NSLog(@"Response:%@, %@, %@, %@, %@ ,lat:%@, lon:%@",[responseObject valueForKey:@"name"], main, cloud, windSpeed, self.weatherDisc.text, location.lat, location.lon);
                 self.city.text = [responseObject valueForKey:@"name"];
+                NSLog(@"City: %@", self.city.text);
                 self.temp.text = [self celsius:[NSString stringWithFormat:@"%@ C", [main valueForKey:@"temp"]]];
+                NSLog(@"Temp: %@", self.temp.text);
                 self.maxTemp.text = [NSString stringWithFormat:@"Max: %@", [self celsius:[NSString stringWithFormat:@"%@", [main valueForKey:@"temp_max"]]]];
+                NSLog(@"%@", self.maxTemp.text);
                 self.minTemp.text = [NSString stringWithFormat:@"Min: %@", [self celsius:[NSString stringWithFormat:@"%@", [main valueForKey:@"temp_min"]]]];
+                NSLog(@"%@", self.minTemp.text);
                 self.pressure.text = [NSString stringWithFormat:@"Pressure: %@", [main valueForKey:@"pressure"]];
+                NSLog(@"%@", self.pressure.text);
                 self.humidity.text = [NSString stringWithFormat:@"Humidity: %@%%", [main valueForKey:@"humidity"]];
+                NSLog(@"%@", self.humidity.text);
                 self.clouds.text = [NSString stringWithFormat:@"Clouds: %@%%", [cloud valueForKey:@"all"]];
                 self.wind.text =[NSString stringWithFormat:@"Wind: %@ m/s", [windSpeed valueForKey:@"speed"]];
-                NSLog(@"%@", [weather valueForKey:@"main"]);
             }
             failure:^(NSURLSessionTask *operation, NSError *error) {
                 NSLog(@"Error: %@", error);
             }
      ];
+    NSLog(@"End of loadData");
 }
 -(NSString*)celsius:(NSString*) kelvin{
     float cels = [kelvin floatValue];

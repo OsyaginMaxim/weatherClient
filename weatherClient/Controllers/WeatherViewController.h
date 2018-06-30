@@ -11,6 +11,7 @@
 #import "Weather.h"
 #import "WeatherView.h"
 #import "Location.h"
+#import "AppDelegate.h"
 
 @interface WeatherViewController : UIViewController
 
