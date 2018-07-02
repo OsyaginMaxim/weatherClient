@@ -25,7 +25,7 @@
     // Do any additional setup after loading the view from its nib.
 }
 
--(void)loadData{
+-(void)loadData {
     AFHTTPSessionManager *manager   = [AFHTTPSessionManager manager];
     [manager    GET:[NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather?lat=%@&lon=%@&appid=e59ece3932558bbf120fde279c990ff7",location.lat,location.lon]
          parameters:nil
