@@ -10,4 +10,7 @@
 
 @implementation Weather
 
+//Init model with json metod
+//Который будет парсить автоматически погоду по JSONу сам внутри
+
 @end
