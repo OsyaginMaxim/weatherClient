@@ -17,7 +17,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [Location.sharedManager getWeatherToday];
+    //[Location.sharedManager getWeatherToday];
+        //[Location.sharedManager getWeatherToday];
+        NSLog(@"Lon and Lat in AppDelegate");
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isLogged"]) {
         UITabBarController *controller = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
         self.window.rootViewController = controller;

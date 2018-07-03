@@ -13,19 +13,39 @@
     Location* location;
     NSString* currentLon;
     NSString* currentLat;
+    CLLocationCoordinate2D coord;
 }
 
 - (void)viewDidLoad {
     NSLog(@"WeatherViewController");
     [super viewDidLoad];
     location = [Location sharedManager];
-    [location getWeatherToday];
-    [self loadData];
+    //[location getWeatherToday];
+    
+    coord = [location getWeatherLocation];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(loadData)
+                                                 name:@"loadData"
+                                               object:nil];
+    //[self loadData];
+    
+    
+    //[self loadData];
     NSLog(@"lon:%@ lat:%@",location.lon,location.lat);
     // Do any additional setup after loading the view from its nib.
 }
 
 -(void)loadData{
+   /* if(([location.lat floatValue] == 0.00)&&([location.lon floatValue] == 0.00)){
+        NSLog(@"if lon and lat equal zero");
+        [self.loadIndication setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
+        [self.view addSubview:self.loadIndication];
+        [[self loadIndication] startAnimating];
+        
+        [location getWeatherToday];
+        NSLog(@"Lon:%@ \n Lat:%@", location.lon, location.lat);
+            
+    }*/
     AFHTTPSessionManager *manager   = [AFHTTPSessionManager manager];
     [manager    GET:[NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather?lat=%@&lon=%@&appid=e59ece3932558bbf120fde279c990ff7",location.lat,location.lon]
          parameters:nil
@@ -42,9 +62,9 @@
                 NSLog(@"City: %@", self.city.text);
                 self.temp.text = [self celsius:[NSString stringWithFormat:@"%@ C", [main valueForKey:@"temp"]]];
                 NSLog(@"Temp: %@", self.temp.text);
-                self.maxTemp.text = [NSString stringWithFormat:@"Max: %@", [self celsius:[NSString stringWithFormat:@"%@", [main valueForKey:@"temp_max"]]]];
+                self.maxTemp.text = [NSString stringWithFormat:@"%@", [self celsius:[NSString stringWithFormat:@"%@", [main valueForKey:@"temp_max"]]]];
                 NSLog(@"%@", self.maxTemp.text);
-                self.minTemp.text = [NSString stringWithFormat:@"Min: %@", [self celsius:[NSString stringWithFormat:@"%@", [main valueForKey:@"temp_min"]]]];
+                self.minTemp.text = [NSString stringWithFormat:@"%@", [self celsius:[NSString stringWithFormat:@"%@", [main valueForKey:@"temp_min"]]]];
                 NSLog(@"%@", self.minTemp.text);
                 self.pressure.text = [NSString stringWithFormat:@"Pressure: %@", [main valueForKey:@"pressure"]];
                 NSLog(@"%@", self.pressure.text);
@@ -57,6 +77,7 @@
                 NSLog(@"Error: %@", error);
             }
      ];
+    [[self loadIndication] stopAnimating];
     NSLog(@"End of loadData");
 }
 -(NSString*)celsius:(NSString*) kelvin{
@@ -68,7 +89,7 @@
 -(NSString*)fahrenheit:(NSString*) kelvin{
     float fahr = [kelvin floatValue];
     fahr = (fahr-273) * 1.8 + 23;
-    kelvin = [NSString stringWithFormat:@"%.0f C", fahr];
+    kelvin = [NSString stringWithFormat:@"%.0f F", fahr];
     return kelvin;
 }
 

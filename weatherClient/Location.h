@@ -13,7 +13,8 @@
 
 @property(nonatomic, retain) NSString* cityLocation;
 -(NSString*)getCityName;
--(void)getWeatherToday;
+//-(void)getWeatherToday:(void (^) (void))handler;
+-(CLLocationCoordinate2D) getWeatherLocation;
 +(id) sharedManager;
 
 @property(nonatomic, strong) NSString *lat;
