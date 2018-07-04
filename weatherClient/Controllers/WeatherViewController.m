@@ -52,27 +52,57 @@
                 windSpeed = [responseObject valueForKey:@"wind"];
                 [spinner stopAnimating];
                 for (NSDictionary *fileDictionary in [responseObject objectForKey:@"weather"]) {
-                    self.weatherDisc.text = [fileDictionary valueForKey:@"main"];
+                    if([[NSUserDefaults standardUserDefaults] boolForKey:@"viewDiscr"]){
+                        self.weatherDisc.text = [fileDictionary valueForKey:@"main"];
+                    }else{
+                        self.weatherDisc.text = nil;
+                    }
+                    
                 }
                 NSLog(@"Response:%@, %@, %@, %@, %@ ,lat:%@, lon:%@",[responseObject valueForKey:@"name"], main, cloud, windSpeed, self.weatherDisc.text, location.lat, location.lon);
                 self.city.text = [responseObject valueForKey:@"name"];
                 NSLog(@"City: %@", self.city.text);
-                self.temp.text = [self celsius:[NSString stringWithFormat:@"%@ C", [main valueForKey:@"temp"]]];
-                NSLog(@"Temp: %@", self.temp.text);
-                self.maxTemp.text = [NSString stringWithFormat:@"%@", [self celsius:[NSString stringWithFormat:@"%@", [main valueForKey:@"temp_max"]]]];
-                NSLog(@"%@", self.maxTemp.text);
-                self.minTemp.text = [NSString stringWithFormat:@"%@", [self celsius:[NSString stringWithFormat:@"%@", [main valueForKey:@"temp_min"]]]];
+                if([[NSUserDefaults standardUserDefaults] boolForKey:@"viewCelsius"]){
+                    self.temp.text = [self celsius:[NSString stringWithFormat:@"%@ C", [main valueForKey:@"temp"]]];
+                    NSLog(@"Temp: %@", self.temp.text);
+                    self.maxTemp.text = [NSString stringWithFormat:@"%@", [self celsius:[NSString stringWithFormat:@"%@", [main valueForKey:@"temp_max"]]]];
+                    NSLog(@"%@", self.maxTemp.text);
+                    self.minTemp.text = [NSString stringWithFormat:@"%@", [self celsius:[NSString stringWithFormat:@"%@", [main valueForKey:@"temp_min"]]]];
+                }else{
+                    self.temp.text = [self fahrenheit:[NSString stringWithFormat:@"%@ C", [main valueForKey:@"temp"]]];
+                    NSLog(@"Temp: %@", self.temp.text);
+                    self.maxTemp.text = [NSString stringWithFormat:@"%@", [self fahrenheit:[NSString stringWithFormat:@"%@", [main valueForKey:@"temp_max"]]]];
+                    NSLog(@"%@", self.maxTemp.text);
+                    self.minTemp.text = [NSString stringWithFormat:@"%@", [self fahrenheit:[NSString stringWithFormat:@"%@", [main valueForKey:@"temp_min"]]]];
+                }
+                
                 NSLog(@"%@", self.minTemp.text);
-                self.pressure.text = [NSString stringWithFormat:@"Pressure: %@", [main valueForKey:@"pressure"]];
+                if([[NSUserDefaults standardUserDefaults] boolForKey:@"viewPressure"]){
+                    self.pressure.text = [NSString stringWithFormat:@"Pressure: %@", [main valueForKey:@"pressure"]];
+                }else{
+                    self.pressure.text = nil;
+                }
+                
                 NSLog(@"%@", self.pressure.text);
-                self.humidity.text = [NSString stringWithFormat:@"Humidity: %@%%", [main valueForKey:@"humidity"]];
+                if([[NSUserDefaults standardUserDefaults] boolForKey:@"viewHumidity"]){
+                    self.humidity.text = [NSString stringWithFormat:@"Humidity: %@%%", [main valueForKey:@"humidity"]];
+                }else{
+                    self.humidity.text = nil;
+                }
+                
                 NSLog(@"%@", self.humidity.text);
                 if([[NSUserDefaults standardUserDefaults] boolForKey:@"viewClouds"]){
                     self.clouds.text = [NSString stringWithFormat:@"Clouds: %@%%", [cloud valueForKey:@"all"]];
                 }else{
                     self.clouds.text = nil;
                 }
-                self.wind.text =[NSString stringWithFormat:@"Wind: %@ m/s", [windSpeed valueForKey:@"speed"]];
+                
+                if([[NSUserDefaults standardUserDefaults] boolForKey:@"viewWind"]){
+                    self.wind.text =[NSString stringWithFormat:@"Wind: %.00f m/s", [[windSpeed valueForKey:@"speed"] floatValue]];
+                }else{
+                    self.wind.text = nil;
+                }
+                
             }
             failure:^(NSURLSessionTask *operation, NSError *error) {
                 NSLog(@"Error: %@", error);

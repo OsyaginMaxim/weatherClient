@@ -15,7 +15,7 @@
 @implementation SettingsViewController
 - (IBAction)logOut:(id)sender {
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isLogged"];
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
 }
 
 - (void)viewDidLoad {
@@ -26,12 +26,78 @@
     
     // Do any additional setup after loading the view.
 }
-- (IBAction)offCloudsAction:(id)sender {
-    if ([self.offClouds isOn]) {
-        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"viewClouds"];
+- (IBAction)fahrenheitAction:(id)sender {
+    if ([self.offMaxTemp isOn]) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"viewFahr"];
+        [self.offMinTemp setOn:NO animated:YES];
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"viewCelsius"];
+        NSLog(@"Switch fahr is off");
+    } else {
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"viewFahr"];
+        [self.offMinTemp setOn:YES animated:YES];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"viewCelsius"];
+        NSLog(@"Switch fahr is on");
+    }
+}
+- (IBAction)celsiusAction:(id)sender {
+    //[self.mySwitch setOn:NO animated:YES];
+    if ([self.offMinTemp isOn]) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"viewCelsius"];
+        [self.offMaxTemp setOn:NO animated:YES];
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"viewFahr"];
+        NSLog(@"Switch celsius is off");
+    } else {
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"viewCelsius"];
+        [self.offMaxTemp setOn:YES animated:YES];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"viewFahr"];
+        NSLog(@"Switch celsuis is on");
+    }
+    
+}
+- (IBAction)offDiscriptionAction:(id)sender {
+    if ([self.offDiscr isOn]) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"viewDiscr"];
         NSLog(@"Switch is off");
     } else {
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"viewDiscr"];
+        NSLog(@"Switch is on");
+    }
+}
+- (IBAction)offPressureAction:(id)sender {
+    if ([self.offPressure isOn]) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"viewPressure"];
+        NSLog(@"Switch is off");
+    } else {
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"viewPressure"];
+        NSLog(@"Switch is on");
+    }
+}
+    
+- (IBAction)offHumidityAction:(id)sender {
+    if ([self.offHumidity isOn]) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"viewHumidity"];
+        NSLog(@"Switch is off");
+    } else {
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"viewHumidity"];
+        NSLog(@"Switch is on");
+    }
+}
+    
+- (IBAction)offWindAction:(id)sender {
+    if ([self.ofWind isOn]) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"viewWind"];
+        NSLog(@"Switch is off");
+    } else {
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"viewWind"];
+        NSLog(@"Switch is on");
+    }
+}
+- (IBAction)offCloudsAction:(id)sender {
+    if ([self.offClouds isOn]) {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"viewClouds"];
+        NSLog(@"Switch is off");
+    } else {
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"viewClouds"];
         NSLog(@"Switch is on");
     }
 }
