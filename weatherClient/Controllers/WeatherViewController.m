@@ -22,11 +22,9 @@
     [super viewDidLoad];
     
     location = [Location sharedManager];
-    //[location getWeatherToday];
+    coord = [location getWeatherLocation];
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     [spinner setCenter:CGPointMake(160,124)];
-    
-    coord = [location getWeatherLocation];
     [spinner startAnimating];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(loadData)

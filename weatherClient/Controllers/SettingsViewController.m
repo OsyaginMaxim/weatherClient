@@ -20,12 +20,38 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"viewClouds"]){
-        [self.offClouds setOn:NO animated:NO];
-    }
+    [self setNoForOffSwitches];
+    
     
     // Do any additional setup after loading the view.
 }
+
+-(void)setNoForOffSwitches{
+    
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"viewClouds"]){
+        [self.offClouds setOn:NO animated:NO];
+    }
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"viewDiscr"]){
+        [self.offDiscr setOn:NO animated:NO];
+    }
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"viewWind"]){
+        [self.ofWind setOn:NO animated:NO];
+    }
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"viewFahr"]){
+        [self.offMaxTemp setOn:NO animated:NO];
+    }
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"viewCelsius"]){
+        [self.offMinTemp setOn:NO animated:NO];
+        [self.offMaxTemp setOn:YES animated:NO];
+    }
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"viewPressure"]){
+        [self.offPressure setOn:NO animated:NO];
+    }
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"viewHumidity"]){
+        [self.offHumidity setOn:NO animated:NO];
+    }
+}
+
 - (IBAction)fahrenheitAction:(id)sender {
     if ([self.offMaxTemp isOn]) {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"viewFahr"];
