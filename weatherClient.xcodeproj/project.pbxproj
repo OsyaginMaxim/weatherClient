@@ -24,7 +24,6 @@
 		B573DE5220DA5BE50083DEC7 /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = B573DE5120DA5BE50083DEC7 /* Weather.m */; };
 		B5A86BDF20DBE51600F9EC45 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A86BDE20DBE51600F9EC45 /* TabBarController.m */; };
 		B5A86BE320DEA6B000F9EC45 /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A86BE120DEA6B000F9EC45 /* WeatherViewController.m */; };
-		B5A86BE420DEA6B000F9EC45 /* WeatherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5A86BE220DEA6B000F9EC45 /* WeatherViewController.xib */; };
 		B5A86BE720DEA71500F9EC45 /* WeatherView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A86BE620DEA71500F9EC45 /* WeatherView.m */; };
 		B5A86BE920DEA8B800F9EC45 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A86BE820DEA8B800F9EC45 /* CoreLocation.framework */; };
 		FDE0209BF348F17B7470ABE9 /* libPods-weatherClientTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DDCCE3B6EB5C87B181E6078 /* libPods-weatherClientTests.a */; };
@@ -84,7 +83,6 @@
 		B5A86BDE20DBE51600F9EC45 /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		B5A86BE020DEA6B000F9EC45 /* WeatherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherViewController.h; sourceTree = "<group>"; };
 		B5A86BE120DEA6B000F9EC45 /* WeatherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
-		B5A86BE220DEA6B000F9EC45 /* WeatherViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherViewController.xib; sourceTree = "<group>"; };
 		B5A86BE520DEA71500F9EC45 /* WeatherView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherView.h; sourceTree = "<group>"; };
 		B5A86BE620DEA71500F9EC45 /* WeatherView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherView.m; sourceTree = "<group>"; };
 		B5A86BE820DEA8B800F9EC45 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -213,7 +211,6 @@
 				B5A86BDE20DBE51600F9EC45 /* TabBarController.m */,
 				B5A86BE020DEA6B000F9EC45 /* WeatherViewController.h */,
 				B5A86BE120DEA6B000F9EC45 /* WeatherViewController.m */,
-				B5A86BE220DEA6B000F9EC45 /* WeatherViewController.xib */,
 				94E6E39820EB9F8900C5CBAE /* SettingsViewController.h */,
 				94E6E39920EB9F8900C5CBAE /* SettingsViewController.m */,
 			);
@@ -355,7 +352,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5A86BE420DEA6B000F9EC45 /* WeatherViewController.xib in Resources */,
 				B573DE1F20D950A10083DEC7 /* LaunchScreen.storyboard in Resources */,
 				B573DE1C20D950A10083DEC7 /* Assets.xcassets in Resources */,
 				B573DE1720D9509F0083DEC7 /* Main.storyboard in Resources */,

@@ -203,9 +203,6 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="M0H-10-Kjz">
-                                <rect key="frame" x="197" y="343.66666666666669" width="20" height="20"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.94117647058823528" green="0.9882352941176471" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -238,8 +235,6 @@
                             <constraint firstItem="qFN-k9-7bW" firstAttribute="top" secondItem="Ne7-JY-WbV" secondAttribute="top" id="e7U-7i-ZFB"/>
                             <constraint firstItem="1qz-UZ-B1E" firstAttribute="height" secondItem="BQN-1H-tjv" secondAttribute="height" id="eOw-W0-DQk"/>
                             <constraint firstItem="ASh-SG-Yu4" firstAttribute="width" secondItem="1qz-UZ-B1E" secondAttribute="width" id="gVM-Tz-3fw"/>
-                            <constraint firstItem="M0H-10-Kjz" firstAttribute="centerY" secondItem="Ne7-JY-WbV" secondAttribute="centerY" id="jx2-qy-AUM"/>
-                            <constraint firstItem="M0H-10-Kjz" firstAttribute="centerX" secondItem="Ne7-JY-WbV" secondAttribute="centerX" id="kiX-Jf-TIQ"/>
                             <constraint firstItem="bpJ-rU-KXF" firstAttribute="leading" secondItem="Hgl-Rm-bpR" secondAttribute="trailing" constant="8" id="omq-n4-keN"/>
                             <constraint firstItem="ADz-6x-Bv8" firstAttribute="top" secondItem="ASh-SG-Yu4" secondAttribute="bottom" constant="8" id="qsI-XT-s8o"/>
                             <constraint firstItem="ASh-SG-Yu4" firstAttribute="leading" secondItem="Ne7-JY-WbV" secondAttribute="leading" constant="20" id="skQ-ns-DEW"/>
@@ -257,7 +252,6 @@
                         <outlet property="city" destination="qFN-k9-7bW" id="Yzc-xR-mny"/>
                         <outlet property="clouds" destination="ADz-6x-Bv8" id="DsP-fH-qMT"/>
                         <outlet property="humidity" destination="1qz-UZ-B1E" id="u5y-cK-ce6"/>
-                        <outlet property="loadIndication" destination="M0H-10-Kjz" id="AMv-z4-s76"/>
                         <outlet property="maxTemp" destination="bpJ-rU-KXF" id="v6C-eR-JMR"/>
                         <outlet property="minTemp" destination="8Dz-99-Tvb" id="KRe-ZR-cB0"/>
                         <outlet property="pressure" destination="BQN-1H-tjv" id="Jva-32-8Fj"/>
@@ -354,6 +348,9 @@
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Scg-nP-LEr">
                                 <rect key="frame" x="345" y="534" width="51" height="31"/>
+                                <connections>
+                                    <action selector="offCloudsAction:" destination="a9j-g8-F4r" eventType="valueChanged" id="3MG-3u-hbd"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min temperature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKu-0T-d1M">
                                 <rect key="frame" x="20" y="204" width="303" height="40"/>
@@ -398,6 +395,9 @@
                                     <constraint firstAttribute="height" constant="44" id="2sk-DA-cpB"/>
                                 </constraints>
                                 <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="logOut:" destination="a9j-g8-F4r" eventType="touchUpInside" id="WtB-Ob-xSR"/>
+                                </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ7-4P-jNm">
                                 <rect key="frame" x="343" y="404" width="53" height="31"/>

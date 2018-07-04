@@ -15,8 +15,6 @@
 
 @interface WeatherViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadIndication;
-
 @property (nonatomic, strong) NSString *cityName;
 @property (weak, nonatomic) IBOutlet UILabel *city;
 @property (weak, nonatomic) IBOutlet UILabel *temp;

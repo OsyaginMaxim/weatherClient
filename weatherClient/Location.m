@@ -70,9 +70,11 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     CLLocation *crnLoc = [locations lastObject];
+    
     //NSLog(@"didUpdateLocations");
     
     [location stopUpdatingLocation];
+    locations = [NSArray array];
     self.lon = [NSString stringWithFormat:@"%F", crnLoc.coordinate.longitude];
     self.lat = [NSString stringWithFormat:@"%F", crnLoc.coordinate.latitude];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"loadData" object:nil];

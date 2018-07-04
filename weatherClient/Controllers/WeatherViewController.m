@@ -14,27 +14,32 @@
     NSString* currentLon;
     NSString* currentLat;
     CLLocationCoordinate2D coord;
+    UIActivityIndicatorView *spinner;
 }
 
 - (void)viewDidLoad {
     NSLog(@"WeatherViewController");
     [super viewDidLoad];
+    
     location = [Location sharedManager];
     //[location getWeatherToday];
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [spinner setCenter:CGPointMake(160,124)];
     
     coord = [location getWeatherLocation];
+    [spinner startAnimating];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(loadData)
                                                  name:@"loadData"
                                                object:nil];
-    //[self loadData];
-    
-    
-    //[self loadData];
+
     NSLog(@"lon:%@ lat:%@",location.lon,location.lat);
     // Do any additional setup after loading the view from its nib.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self loadData];
+}
 
 -(void)loadData {
     AFHTTPSessionManager *manager   = [AFHTTPSessionManager manager];
@@ -45,6 +50,7 @@
                 main = [responseObject valueForKey:@"main"];
                 cloud = [responseObject valueForKey:@"clouds"];
                 windSpeed = [responseObject valueForKey:@"wind"];
+                [spinner stopAnimating];
                 for (NSDictionary *fileDictionary in [responseObject objectForKey:@"weather"]) {
                     self.weatherDisc.text = [fileDictionary valueForKey:@"main"];
                 }
@@ -61,14 +67,17 @@
                 NSLog(@"%@", self.pressure.text);
                 self.humidity.text = [NSString stringWithFormat:@"Humidity: %@%%", [main valueForKey:@"humidity"]];
                 NSLog(@"%@", self.humidity.text);
-                self.clouds.text = [NSString stringWithFormat:@"Clouds: %@%%", [cloud valueForKey:@"all"]];
+                if([[NSUserDefaults standardUserDefaults] boolForKey:@"viewClouds"]){
+                    self.clouds.text = [NSString stringWithFormat:@"Clouds: %@%%", [cloud valueForKey:@"all"]];
+                }else{
+                    self.clouds.text = nil;
+                }
                 self.wind.text =[NSString stringWithFormat:@"Wind: %@ m/s", [windSpeed valueForKey:@"speed"]];
             }
             failure:^(NSURLSessionTask *operation, NSError *error) {
                 NSLog(@"Error: %@", error);
             }
      ];
-    [[self loadIndication] stopAnimating];
     NSLog(@"End of loadData");
 }
 -(NSString*)celsius:(NSString*) kelvin{

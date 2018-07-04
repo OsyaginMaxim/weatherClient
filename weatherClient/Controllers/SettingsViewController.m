@@ -13,10 +13,27 @@
 @end
 
 @implementation SettingsViewController
+- (IBAction)logOut:(id)sender {
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isLogged"];
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"viewClouds"]){
+        [self.offClouds setOn:NO animated:NO];
+    }
+    
     // Do any additional setup after loading the view.
+}
+- (IBAction)offCloudsAction:(id)sender {
+    if ([self.offClouds isOn]) {
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"viewClouds"];
+        NSLog(@"Switch is off");
+    } else {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"viewClouds"];
+        NSLog(@"Switch is on");
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -25,9 +42,7 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    
     [self.changeCity resignFirstResponder];
-    
     return YES;
     
 }
