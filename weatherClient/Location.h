@@ -12,7 +12,6 @@
 @interface Location : NSObject <CLLocationManagerDelegate>
 
 @property(nonatomic, retain) NSString* cityLocation;
--(NSString*)getCityName;
 //-(void)getWeatherToday:(void (^) (void))handler;
 -(CLLocationCoordinate2D) getWeatherLocation;
 +(id) sharedManager;
