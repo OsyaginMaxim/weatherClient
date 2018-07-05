@@ -184,6 +184,7 @@
             }
             failure:^(NSURLSessionTask *operation, NSError *error) {
                 NSLog(@"Error: %@", error);
+                [self loadByCoord];
             }
      ];
     NSLog(@"End of loadData");
