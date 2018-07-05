@@ -134,9 +134,10 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:self.changeCity.text forKey:@"name"];
     [self.changeCity resignFirstResponder];
     return YES;
-    
 }
 
 /*

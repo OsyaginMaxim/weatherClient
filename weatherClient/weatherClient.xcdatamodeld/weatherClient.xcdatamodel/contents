@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17C88" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
-    <entity name="Weather" representedClassName="Weather" syncable="YES" codeGenerationType="class">
+    <entity name="MyWeather" representedClassName="MyWeather" syncable="YES" codeGenerationType="class">
         <attribute name="cloud" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="humidity" optional="YES" attributeType="String" syncable="YES"/>
@@ -15,6 +15,6 @@
         <attribute name="wind" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Weather" positionX="-63" positionY="-18" width="128" height="225"/>
+        <element name="MyWeather" positionX="-63" positionY="-18" width="128" height="225"/>
     </elements>
 </model>
