@@ -19,6 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //[Location.sharedManager getWeatherToday];
         //[Location.sharedManager getWeatherToday];
+    [MagicalRecord setupAutoMigratingCoreDataStack];
         NSLog(@"Lon and Lat in AppDelegate");
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"isLogged"]) {
         UITabBarController *controller = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];

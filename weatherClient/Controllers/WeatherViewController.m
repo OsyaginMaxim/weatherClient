@@ -23,9 +23,9 @@
     
     location = [Location sharedManager];
     coord = [location getWeatherLocation];
-    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    [spinner setCenter:CGPointMake(160,124)];
-    [spinner startAnimating];
+    //UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    //[spinner setCenter:CGPointMake(160,124)];
+    //[spinner startAnimating];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(loadData)
                                                  name:@"loadData"
@@ -46,9 +46,10 @@
            progress:nil
             success:^(NSURLSessionTask *task, id responseObject) {
                 NSError* error;
+                Weather* model ;
                 NSData* jsonData = [NSJSONSerialization dataWithJSONObject:responseObject
                                                                    options:NSJSONWritingPrettyPrinted error:&error];
-                Weather* model = [[Weather alloc] initWithJSON:jsonData];
+                model = [[Weather alloc] initWithJSON:jsonData];
                 main = [responseObject valueForKey:@"main"];
                 cloud = [responseObject valueForKey:@"clouds"];
                 windSpeed = [responseObject valueForKey:@"wind"];
@@ -115,6 +116,7 @@
     
 -(void)loadByCityName{
     NSLog(@"Name: %@", [[NSUserDefaults standardUserDefaults] objectForKey:@"name"]);
+    //self.weather = [Weather createEntity];
     NSString *encoded = [[[NSUserDefaults standardUserDefaults] objectForKey:@"name"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     AFHTTPSessionManager *manager   = [AFHTTPSessionManager manager];
     [manager    GET:[NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather?q=%@&appid=e59ece3932558bbf120fde279c990ff7",encoded]

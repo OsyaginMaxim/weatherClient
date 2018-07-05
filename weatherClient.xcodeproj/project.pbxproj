@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		80C71D105436DF41D5D31F98 /* libPods-weatherClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC4E4C0A2DD50B08029F393 /* libPods-weatherClient.a */; };
+		94E06CB820EE8E7300AA4043 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E06CB720EE8E7300AA4043 /* CoreData.framework */; };
 		94E6E39520E14B2800C5CBAE /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E6E39420E14B2800C5CBAE /* Location.m */; };
 		94E6E39A20EB9F8900C5CBAE /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94E6E39920EB9F8900C5CBAE /* SettingsViewController.m */; };
 		A454D55A64E6FD9B7A7486B7 /* libPods-weatherClientUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EB687D86631C60BC794B47E /* libPods-weatherClientUITests.a */; };
@@ -51,6 +52,7 @@
 		20042BA194007700FFB125E4 /* Pods-weatherClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherClientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weatherClientTests/Pods-weatherClientTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2EB687D86631C60BC794B47E /* libPods-weatherClientUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-weatherClientUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		655324CC0801B8BCF0C90F84 /* Pods-weatherClientUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherClientUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weatherClientUITests/Pods-weatherClientUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		94E06CB720EE8E7300AA4043 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		94E6E39320E14B2800C5CBAE /* Location.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Location.h; path = weatherClient/Location.h; sourceTree = SOURCE_ROOT; };
 		94E6E39420E14B2800C5CBAE /* Location.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = weatherClient/Location.m; sourceTree = SOURCE_ROOT; };
 		94E6E39820EB9F8900C5CBAE /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94E06CB820EE8E7300AA4043 /* CoreData.framework in Frameworks */,
 				B5A86BE920DEA8B800F9EC45 /* CoreLocation.framework in Frameworks */,
 				80C71D105436DF41D5D31F98 /* libPods-weatherClient.a in Frameworks */,
 			);
@@ -238,6 +241,7 @@
 		C0AFD6DD50975BB56B78D58D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				94E06CB720EE8E7300AA4043 /* CoreData.framework */,
 				B5A86BE820DEA8B800F9EC45 /* CoreLocation.framework */,
 				9CC4E4C0A2DD50B08029F393 /* libPods-weatherClient.a */,
 				9DDCCE3B6EB5C87B181E6078 /* libPods-weatherClientTests.a */,

@@ -12,6 +12,7 @@
 #import "WeatherView.h"
 #import "Location.h"
 #import "AppDelegate.h"
+#import <MagicalRecord/MagicalRecord.h>
 
 @interface WeatherViewController : UIViewController
 
@@ -25,5 +26,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *humidity;
 @property (weak, nonatomic) IBOutlet UILabel *wind;
 @property (weak, nonatomic) IBOutlet UILabel *clouds;
+//@property (strong, nonatomic) Weather* weather;
 
 @end

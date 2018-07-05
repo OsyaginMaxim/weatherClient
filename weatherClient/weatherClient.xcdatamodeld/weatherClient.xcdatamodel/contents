@@ -5,7 +5,7 @@
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="humidity" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iD" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="main" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="max" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="min" optional="YES" attributeType="String" syncable="YES"/>
