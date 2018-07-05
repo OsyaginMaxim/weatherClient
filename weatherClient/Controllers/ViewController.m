@@ -19,6 +19,9 @@
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"isLogged"];
     self.registrationView.passwordField.secureTextEntry = YES;
     [self.registrationView cornerRadiusButton];
+    UITapGestureRecognizer * handleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeKeyboard)];
+    [self.view addGestureRecognizer:handleTap];
+    handleTap.cancelsTouchesInView = false;
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -45,6 +48,8 @@
         NSLog(@"Token not equal nil");
         if(self.registrationView.passwordField.text == token){
             NSLog(@"Token equal password");
+            self.registrationView.loginField.text = @"";
+            self.registrationView.passwordField.text = @"";
             [self performSegueWithIdentifier:@"login" sender:self];
         }else{
             NSLog(@"Token not equal password");
@@ -61,11 +66,21 @@
     }else{
         NSLog(@"Token equal nil");
         [keychain setString:self.registrationView.passwordField.text forKey:self.registrationView.loginField.text];
+        self.registrationView.loginField.text = @"";
+        self.registrationView.passwordField.text = @"";
         [self performSegueWithIdentifier:@"login" sender:self];
     }
     
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self closeKeyboard];
+    return YES;
+}
+-(void)closeKeyboard{
+    [self.registrationView.loginField resignFirstResponder];
+    [self.registrationView.passwordField resignFirstResponder];
+}
 
 
 @end

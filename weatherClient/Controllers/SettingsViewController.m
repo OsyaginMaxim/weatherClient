@@ -15,7 +15,7 @@
 @implementation SettingsViewController
 - (IBAction)logOut:(id)sender {
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isLogged"];
-    [self.presentingViewController dismissViewControllerAnimated:NO completion:nil];
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)viewDidLoad {

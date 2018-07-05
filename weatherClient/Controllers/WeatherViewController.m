@@ -45,6 +45,10 @@
          parameters:nil
            progress:nil
             success:^(NSURLSessionTask *task, id responseObject) {
+                NSError* error;
+                NSData* jsonData = [NSJSONSerialization dataWithJSONObject:responseObject
+                                                                   options:NSJSONWritingPrettyPrinted error:&error];
+                Weather* model = [[Weather alloc] initWithJSON:jsonData];
                 main = [responseObject valueForKey:@"main"];
                 cloud = [responseObject valueForKey:@"clouds"];
                 windSpeed = [responseObject valueForKey:@"wind"];

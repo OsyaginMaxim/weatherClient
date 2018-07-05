@@ -14,9 +14,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "-locationManager:didUpdateLocations:"
-            landmarkType = "7">
+            endingLineNumber = "70">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,7 +24,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weatherClient/Controllers/WeatherViewController.m"
-            timestampString = "552431523.5516829"
+            timestampString = "552475927.58262"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
@@ -46,9 +44,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "-locationManager:didUpdateLocations:"
-            landmarkType = "7">
+            endingLineNumber = "73">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -62,9 +58,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "-locationManager:didUpdateLocations:"
-            landmarkType = "7">
+            endingLineNumber = "74">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -78,9 +72,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "-locationManager:didUpdateLocations:"
-            landmarkType = "7">
+            endingLineNumber = "76">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -94,9 +86,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "-locationManager:didUpdateLocations:"
-            landmarkType = "7">
+            endingLineNumber = "75">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -110,9 +100,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "-locationManager:didUpdateLocations:"
-            landmarkType = "7">
+            endingLineNumber = "77">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -122,11 +110,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weatherClient/Controllers/WeatherViewController.m"
-            timestampString = "552431523.553926"
+            timestampString = "552475927.582795"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "-loadData"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,11 +126,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weatherClient/Controllers/WeatherViewController.m"
-            timestampString = "552431523.554"
+            timestampString = "552475927.582873"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "-loadData"
             landmarkType = "7">
          </BreakpointContent>
@@ -154,11 +142,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weatherClient/Controllers/WeatherViewController.m"
-            timestampString = "552431523.5540709"
+            timestampString = "552475927.5829951"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "-loadData"
             landmarkType = "7">
          </BreakpointContent>
@@ -170,11 +158,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weatherClient/Controllers/WeatherViewController.m"
-            timestampString = "552431523.55414"
+            timestampString = "552475927.5830671"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "-loadData"
             landmarkType = "7">
          </BreakpointContent>
@@ -186,7 +174,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weatherClient/Controllers/SettingsViewController.m"
-            timestampString = "552431523.554211"
+            timestampString = "552475927.583135"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
@@ -202,7 +190,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weatherClient/Controllers/WeatherViewController.m"
-            timestampString = "552431523.554278"
+            timestampString = "552475927.5832061"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
@@ -218,7 +206,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weatherClient/Controllers/WeatherViewController.m"
-            timestampString = "552431523.554347"
+            timestampString = "552475927.583266"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -234,7 +222,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weatherClient/Controllers/WeatherViewController.m"
-            timestampString = "552431523.554418"
+            timestampString = "552475927.5833271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
@@ -250,7 +238,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weatherClient/Controllers/WeatherViewController.m"
-            timestampString = "552431523.55449"
+            timestampString = "552475927.583389"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
@@ -266,7 +254,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weatherClient/Controllers/WeatherViewController.m"
-            timestampString = "552431523.554561"
+            timestampString = "552475927.58345"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
@@ -282,7 +270,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "weatherClient/Controllers/WeatherViewController.m"
-            timestampString = "552431523.554626"
+            timestampString = "552475927.583511"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"

@@ -18,10 +18,12 @@
 @property(nonatomic, strong)NSString* weatherMaxTemp;
 @property(nonatomic, strong)NSString* weatherPressure;
 @property(nonatomic, strong)NSString* weatherHumidity;
-@property(nonatomic, strong)NSString* weatherRain;
 @property(nonatomic, strong)NSString* weatherID;
 @property(nonatomic, strong)NSString* weatherIcon;
 @property(nonatomic, strong)NSString* weatherMain;
+@property(nonatomic, strong)NSDate* date;
+
+-(id)initWithJSON:(NSData*)json;
 
 
 @end

@@ -8,6 +8,7 @@ target 'weatherClient' do
 pod 'AFNetworking', '~> 3.0'
 pod 'SDWebImage', '~> 4.0'
 pod 'UICKeyChainStore'
+# pod 'MagicalRecords'
 # Pods for weatherClient
 
 target 'weatherClientTests' do
